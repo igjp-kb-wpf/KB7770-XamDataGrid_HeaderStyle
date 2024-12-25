@@ -1,0 +1,32 @@
+﻿<Window x:Class="KB7770_XamDataGrid_HeaderStyle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KB7770_XamDataGrid_HeaderStyle"
+        xmlns:igDP="http://infragistics.com/DataPresenter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <igDP:XamDataGrid x:Name="DataGrid">
+            <igDP:XamDataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type igDP:LabelPresenter}">
+                    <Setter Property="Background" Value="Red" />
+                </Style>
+            </igDP:XamDataGrid.Resources>
+            
+            <igDP:XamDataGrid.FieldLayouts>
+                <igDP:FieldLayout>
+                    <igDP:Field Name="Id" Label="ID" Width="50">
+                        <igDP:Field.Settings>
+                            <igDP:FieldSettings LabelPresenterStyle="{StaticResource HeaderStyle}" />
+                        </igDP:Field.Settings>
+                    </igDP:Field>
+                    <igDP:Field Name="Title" Label="作品名" />
+                    <igDP:Field Name="Author" Label="著者" />
+                    <igDP:Field Name="Excerpt" Label="抜粋" />
+                </igDP:FieldLayout>
+            </igDP:XamDataGrid.FieldLayouts>
+        </igDP:XamDataGrid>
+    </Grid>
+</Window>
